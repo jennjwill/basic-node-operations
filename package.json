@@ -1,0 +1,25 @@
+{
+  "name": "basic-node-operations",
+  "version": "1.0.0",
+  "description": "bloc checkpoint node operations",
+  "main": "bash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennjwill/basic-node-operations.git"
+  },
+  "keywords": [
+    "bloc",
+    "node",
+    "basic",
+    "operations"
+  ],
+  "author": "jenn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennjwill/basic-node-operations/issues"
+  },
+  "homepage": "https://github.com/jennjwill/basic-node-operations#readme"
+}
