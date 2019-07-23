@@ -1,0 +1,106 @@
+Questions
+
+1. Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+A: `sort` sorts each line in the file alphabetically (in groupings of how deeply they are nested): 
+
+$ sort commands.js
+      break;   //most deeply nested
+      break;
+      commandLibrary.cat(userInputArray.slice(1));
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+      done(data);
+      if (err) throw err;
+    });
+    case "cat":
+    case "echo":
+    const fileName = fullPath[0];
+    done(userInput);
+    fs.readFile(fileName, (err, data) => {
+  }
+  }
+  },
+  cat: function(fullPath) {
+  const command = userInputArray[0];
+  const userInputArray = userInput.split(" ");
+  echo: function(userInput) {
+  process.stdout.write("\nprompt > ");
+  process.stdout.write(output);
+  switch (command) {
+
+
+
+
+
+}
+}
+};
+const commandLibrary = {  //outer non-nested group
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+
+
+
+
+A: `wc` prints newline, word and byte counts for the file. For command.js: newline count=36, word count=73, byte count=816.
+
+$ wc commands.js
+ 36  73 816 commands.js
+
+
+
+
+A: `uniq` command.js sorts each line and returns only unique(non-repeated) lines. I don't think there were any repeated lines in this file to remove:
+
+
+$ uniq commands.js
+const fs = require("fs");
+
+function done(output) {
+  process.stdout.write(output);
+  process.stdout.write("\nprompt > ");
+}
+
+function evaluateCmd(userInput) {
+  const userInputArray = userInput.split(" ");
+  const command = userInputArray[0];
+
+  switch (command) {
+    case "echo":
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+      break;
+    case "cat":
+      commandLibrary.cat(userInputArray.slice(1));
+      break;
+  }
+}
+
+const commandLibrary = {
+  echo: function(userInput) {
+    done(userInput);
+  },
+  cat: function(fullPath) {
+    const fileName = fullPath[0];
+    fs.readFile(fileName, (err, data) => {
+      if (err) throw err;
+      done(data);
+    });
+  }
+};
+
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+
+
+
+
+
+2. Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+A:   $ uniq commands.js | wc
+     36      73     816
+
+I think I was correct that there were no repeated lines in commands.js because the counts are exactly the same for this pipeline sequence as for wc commands.js. If there had been any repeated lines taken out with the uniq command, the counts would've been lower.
