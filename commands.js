@@ -46,7 +46,7 @@ const commandLibrary = {
       let text = data.toString("utf8");
       let slicedText = text
         .split("\n")
-        .slice(0, 5) //1st 5 lines
+        .slice(0, 10) //1st 10 lines
         .join("\n");
       let bufferText = Buffer.from(slicedText, "utf8");
       done(bufferText);
@@ -59,7 +59,7 @@ const commandLibrary = {
       let text = data.toString("utf8");
       let slicedText = text
         .split("\n")
-        .slice(-3) //last 3 lines
+        .slice(-10) //last 10 lines
         .join("\n");
       let bufferText = Buffer.from(slicedText, "utf8");
       done(bufferText);

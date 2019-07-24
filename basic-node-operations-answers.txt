@@ -103,4 +103,21 @@ module.exports.evaluateCmd = evaluateCmd;
 A:   $ uniq commands.js | wc
      36      73     816
 
+These above commands run uniq on commands.js, to remove any duplicate lines of code, and then pipe that output into wc, which prints newline, word and byte counts (of the output).
+
 I think I was correct that there were no repeated lines in commands.js because the counts are exactly the same for this pipeline sequence as for wc commands.js. If there had been any repeated lines taken out with the uniq command, the counts would've been lower.
+
+
+
+6. A:
+
+var sentence = "Oh hey, javascript!";
+
+var reverseString = inputString => {
+  return inputString
+  .split('')
+  .reverse()
+  .join('');
+};
+
+console.log(reverseString(sentence));
