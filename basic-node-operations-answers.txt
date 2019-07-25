@@ -113,11 +113,14 @@ I think I was correct that there were no repeated lines in commands.js because t
 
 var sentence = "Oh hey, javascript!";
 
-var reverseString = inputString => {
+let reverseString = inputString => {
   return inputString
   .split('')
   .reverse()
-  .join('');
-};
+  .join('')
+  .split(' ')
+  .reverse()
+  .join(' ');
+}
 
 console.log(reverseString(sentence));

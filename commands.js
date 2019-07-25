@@ -22,9 +22,7 @@ function evaluateCmd(userInput) {
     case "tail":
       commandLibrary.tail(userInputArray.slice(1));
     default:
-      process.stdout.write(
-        "You're an awesome coder but that command doesn't exist. Please try another."
-      );
+      process.stdout.write("-bash: " + userInput + ": command not found");
   }
 }
 
